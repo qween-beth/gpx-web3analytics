@@ -2,30 +2,29 @@ import Head from 'next/head'
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 import styles from '../styles/Home.module.css'
 
-export default function Home({ launches }) {
+export default function Home({ posts }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Subsocial Posts</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          SpaceX Launches
+          Subsocial Posts
         </h1>
 
         <p className={styles.description}>
-          <a href="https://squid.subsquid.io/subsocial/graphql">Latest launches</a> from SpaceX
+          Latest posts from Subsocial
         </p>
 
         <div className={styles.grid}>
-          {reactions.map(post => {
+          {posts.map(post => {
             return (
-              <a key={post.id} href={post.image} className={styles.card}>
+              <a key={post.id} href={post.space.id} className={styles.card}>
                 <h3>{ post.title }</h3>
-                <p><strong>Followers Count</strong> { new Date(post.reactionsCount) }</p>
-
+                <p><strong>Reactions Count:</strong> { post.reactionsCount }</p>
               </a>
             );
           })}
@@ -55,13 +54,11 @@ export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
       query myQuery {
-        post (orderBy: reactionsCount_DESC, limit: 3, where: {createdAtTime_gt: "2023-01-01T00:00:00.000000Z"}) {
+        post (orderBy: reactionsCount_DESC, limit: 3, where: {createdAtTime_gt: "2022-01-01T00:00:00.000000Z"}) {
+            id
             content
             title
             reactionsCount
-            sharedPost {
-              id
-            }
             createdAtTime
             space {
               id
@@ -75,7 +72,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      reactions: data.post
+      posts: data.post
     }
   }
 }
