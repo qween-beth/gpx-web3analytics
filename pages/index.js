@@ -20,11 +20,11 @@ export default function Home({ posts }) {
         </p>
 
         <div className={styles.grid}>
-          {posts.map(post => {
+          {posts.map(posts => {
             return (
-              <a key={post.id} href={post.space.id} className={styles.card}>
-                <h3>{ post.title }</h3>
-                <p><strong>Reactions Count:</strong> { post.reactionsCount }</p>
+              <a key={posts.id} href={posts.space.id} className={styles.card}>
+                <h3>{ posts.title }</h3>
+                <p><strong>Reactions Count:</strong> { posts.reactionsCount }</p>
               </a>
             );
           })}
@@ -45,34 +45,34 @@ export default function Home({ posts }) {
   )
 }
 
-export async function getStaticProps() {
-  const client = new ApolloClient({
-    uri: 'https://squid.subsquid.io/subsocial/graphql',
-    cache: new InMemoryCache()
-  });
+const API_URL = 'https://squid.subsquid.io/subsocial/graphql'
 
-  const { data } = await client.query({
-    query: gql`
-      query myQuery {
-        post (orderBy: reactionsCount_DESC, limit: 3, where: {createdAtTime_gt: "2022-01-01T00:00:00.000000Z"}) {
-            id
-            content
-            title
-            reactionsCount
-            createdAtTime
-            space {
-              id
-              name
-              summary
-            }
-          }
-        }
-        `
-  });
+/* create the API client */
+export const client = new ApolloClient({
+  uri: API_URL,
+  cache: new InMemoryCache()
+});
 
-  return {
-    props: {
-      posts: data.post
+  
+/* define a GraphQL query  */
+export const explorePosts = gql`
+query MyQuery {
+  posts(orderBy: reactionsCount_DESC, limit: 3, where: {createdAtTime_gt: "2023-01-01T00:00:00.000000Z"}) {
+    content
+    title
+    reactionsCount
+    sharedPost {
+      id
+    }
+    createdAtTime
+    space {
+      id
+      name
+      summary
     }
   }
 }
+`
+
+
+
