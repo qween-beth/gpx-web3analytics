@@ -12,7 +12,7 @@ Our proposed solution is a Web 3 app dashboard. We designed a dashboard which sp
 ## About product
 GPX is a web 3 social network platform that spools data via pipelines generating analytics and insights on the activities of users in the community. 
 
-Find project presentation [here] (https://www.canva.com/design/DAFa0i94iIk/6N1yAFz9oYBS2v9sjyzQuQ/editutm_content=DAFa0i94iIk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+Find project presentation [here](https://www.canva.com/design/DAFa0i94iIk/6N1yAFz9oYBS2v9sjyzQuQ/editutm_content=DAFa0i94iIk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
 
 
