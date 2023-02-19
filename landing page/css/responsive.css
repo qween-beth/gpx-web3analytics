@@ -1,0 +1,111 @@
+
+@media only screen and (max-width: 1000px) {
+
+    .site-content-center {
+        position: absolute;
+        top: 57%;
+        left: 38%;
+    }
+    ul.navbar-nav.ms-auto.mb-2.mb-lg-0 {
+        background-color: #ae01d5;
+        margin-right: 10px !important;
+        padding: 10px;
+        margin-top: 15px;
+        border-radius: 6px;
+    }
+    
+    .navbar-nav .nav-item a.nav-link {
+        color: #fff;
+        margin: 8px 0;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        padding: 8px 16px;
+        color: #212121;
+    }
+    
+    ul.navbar-nav li:last-child {
+        padding: 50px 0;
+    }
+    
+    .outline-btn {
+        padding: 10px 20px;
+        color: #fff;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    
+    
+
+    .navbar-dark .navbar-nav .nav-link {
+        padding: 8px 16px;
+        color: #212121;
+    }
+    
+    .btn-one { 
+        padding: 10px 20px; 
+    }
+    
+    .min-mb-20 {
+        margin-bottom: 40px;
+        
+    }
+ 
+    
+    .display-3 {
+        font-size: 32px;
+    }
+    
+     
+    
+    .slider-content video {
+        margin-left: -90px;
+    }
+    
+    .slider-content { 
+        top: 20%;
+    }
+    
+    
+    
+    .slider-area {
+        overflow-x: hidden;
+    }
+
+    .main-area {
+        overflow-x: hidden;
+    }
+    
+     
+    
+    .site-content-center {
+        position: absolute;
+        top: 54%;
+        left: 25%;
+    }
+     
+    
+    .chcek-img img {
+        width: 30px;
+    }
+    
+    button.btn-close {
+        background-color: #fff;
+        opacity: 1;
+        right: 35px;
+        top: -11px;
+        position: absolute;
+    }
+    
+    .social-icon img {
+        width: 30px;
+        margin: 5px;
+    }
+
+    .navbar img.logo-white {
+        width: 100px;
+    }
+ 
+}
